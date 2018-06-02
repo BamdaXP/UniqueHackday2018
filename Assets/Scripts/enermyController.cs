@@ -33,6 +33,14 @@ public class enermyController : MonoBehaviour {
             Debug.Log("fire");
             yield return new WaitForSeconds(shotWait);
         }
+    }
 
+    public void Dispawn()
+    {
+        Explodable _explodable = GetComponent<Explodable>();
+        _explodable.explode();
+        ExplosionForce ef = GameObject.FindObjectOfType<ExplosionForce>();
+        ef.doExplosion(transform.position);
+        gameObject.SetActive(false);
     }
 }

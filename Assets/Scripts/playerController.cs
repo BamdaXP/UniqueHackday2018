@@ -10,11 +10,34 @@ public class playerController : MonoBehaviour {
     public float speed;
     public float angularSpeed;
     Rigidbody2D Rb;
+
+    private PlayerRay _ray;
+    public float _fireDuration = 1.0f;
+    [SerializeField] 
+    private float _fireRemaining;
+    [SerializeField] 
+    private bool _isFiring;
+
+    public PlayerRay Ray
+    {
+        get { return _ray; }
+    }
+
+    public bool IsFiring
+    {
+        get { return _isFiring; }
+    }
+
     // Use this for initialization
     void Start () {
         Rb = player.GetComponent<Rigidbody2D>();
         Rb.position=startPos;
-	}
+
+        _ray = player.GetComponentInChildren<PlayerRay>();
+        _ray.gameObject.SetActive(false);
+        _fireRemaining = 0.0f;
+        _isFiring = false;
+    }
 	
 	// Update is called once per frame
 	void Update () {
@@ -36,11 +59,30 @@ public class playerController : MonoBehaviour {
         {
             Fire();
         }
-        
+
+	    if (_isFiring)
+	    {
+	        _fireRemaining -= Time.deltaTime;
+	        if (_fireRemaining < 0.001f)
+	        {
+	            PostFire();
+	        }
+	    }
     }
     public void Fire()
     {
         //Instantiate();
-        Debug.Log("Fire" + playerNum);
+        _ray.gameObject.SetActive(true);
+        _isFiring = true;
+        _fireRemaining = _fireDuration;
+        // Debug.Log("Fire" + playerNum);
+    }
+
+    public void PostFire()
+    {
+        _ray.gameObject.SetActive(false);
+        _isFiring = false;
+        _fireRemaining = 0.0f;
+        // Debug.Log("Post Fire" + playerNum);
     }
 }
