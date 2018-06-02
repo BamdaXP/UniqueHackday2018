@@ -3,7 +3,11 @@
 --- !u!78 &1
 TagManager:
   serializedVersion: 2
-  tags: []
+  tags:
+  - Obstacle
+  - Background
+  - Mirror
+  - Enemy
   layers:
   - Default
   - TransparentFX
@@ -38,6 +42,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: BackTrigger
+    uniqueID: 818791517
+    locked: 0
+  - name: Background
+    uniqueID: 3747302333
+    locked: 0
   - name: Default
     uniqueID: 0
     locked: 0
