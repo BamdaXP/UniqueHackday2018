@@ -12,13 +12,13 @@ public class PlayerRay : MonoBehaviour
 
 	void Start()
 	{
-		line = gameObject.GetComponent<LineRenderer>();
-		_points = new Vector2[line.positionCount];
-		_pointCount = line.positionCount; 
 	}
 
 	private void LateUpdate()
 	{
+		line = gameObject.GetComponent<LineRenderer>();
+		_points = new Vector2[line.positionCount];
+		_pointCount = line.positionCount; 
 		for (int i = 0; i < line.positionCount; i++)
 		{
 			_points[i].x = gameObject.transform.position.x + (gameObject.transform.localToWorldMatrix*line.GetPosition(i)).x;

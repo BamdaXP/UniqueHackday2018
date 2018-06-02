@@ -12,6 +12,7 @@ public class playerController : MonoBehaviour {
     public float minX, minY, maxX, maxY;
     Rigidbody2D Rb;
 
+    [SerializeField]
     private PlayerRay _ray;
     public float _fireDuration = 1.0f;
     [SerializeField] 
@@ -60,7 +61,7 @@ public class playerController : MonoBehaviour {
         {
             Fire();
         }
-        Rb.position = new Vector2(Mathf.Clamp(Rb.position.x, minX, maxX), Mathf.Clamp(Rb.position.y, minY, maxY));
+        //Rb.position = new Vector2(Mathf.Clamp(Rb.position.x, minX, maxX), Mathf.Clamp(Rb.position.y, minY, maxY));
 	    if (_isFiring)
 	    {
 	        _fireRemaining -= Time.deltaTime;
