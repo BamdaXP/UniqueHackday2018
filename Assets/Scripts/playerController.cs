@@ -8,31 +8,35 @@ public class playerController : MonoBehaviour {
     public Vector2 startPos;
     public GameObject player;
     public float speed;
+    public float angularSpeed;
     Rigidbody2D Rb;
     // Use this for initialization
     void Start () {
         Rb = player.GetComponent<Rigidbody2D>();
         Rb.position=startPos;
-        Rb.velocity = new Vector2(0, 0);
 	}
 	
 	// Update is called once per frame
 	void Update () {
         float moveX = Input.GetAxis("Horizontal" + playerNum);
         float moveY= Input.GetAxis("Vertical" + playerNum);
+        float rotateC = Input.GetAxis("Quaternion" + playerNum);
+        if (rotateC==0&&(moveX!=0||moveY!=0))
+        {
+            Rb.freezeRotation = true;
+        }
+        else
+        {
+            Rb.freezeRotation = false;
+        }
         Vector2 movement = new Vector2(moveX, moveY);
-        Rb.velocity= movement;
-        if(Input.GetButtonDown("Fire"+playerNum))
+        Rb.velocity= movement.normalized*speed;
+        Rb.angularVelocity = rotateC*angularSpeed;
+        if (Input.GetButtonDown("Fire"+playerNum))
         {
             Fire();
         }
-    }
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.tag.Equals("Enermy"))
-        {
-            
-        }
+        
     }
     public void Fire()
     {
