@@ -9,12 +9,13 @@ public class enermyController : MonoBehaviour {
     Rigidbody2D Rb;
     public GameObject bolt;
     public int shotWait;
+    public int hasfire;
     // Use this for initialization
     void Start () {
         Rb = enermy.GetComponent<Rigidbody2D>();
         Rb.position = startPos;
         Rb.velocity = speed*new Vector2(0,-1);
-        StartCoroutine(Fire());
+        if(hasfire==1)StartCoroutine(Fire());
     }
 	
 	// Update is called once per frame
@@ -23,14 +24,12 @@ public class enermyController : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter");
     }
     IEnumerator Fire()
     {
         while(true)
         {
             Instantiate(bolt, Rb.transform);
-            Debug.Log("fire");
             yield return new WaitForSeconds(shotWait);
         }
 

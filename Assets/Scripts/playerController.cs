@@ -9,6 +9,7 @@ public class playerController : MonoBehaviour {
     public GameObject player;
     public float speed;
     public float angularSpeed;
+    public float minX, minY, maxX, maxY;
     Rigidbody2D Rb;
     // Use this for initialization
     void Start () {
@@ -36,11 +37,10 @@ public class playerController : MonoBehaviour {
         {
             Fire();
         }
-        
+        Rb.position = new Vector2(Mathf.Clamp(Rb.position.x, minX, maxX), Mathf.Clamp(Rb.position.y, minY, maxY));
     }
     public void Fire()
     {
         //Instantiate();
-        Debug.Log("Fire" + playerNum);
     }
 }
