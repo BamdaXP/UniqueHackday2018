@@ -350,8 +350,11 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
     <Compile Include="Assets\Scripts\GamePlay\LineGenerator.cs" />
     <Compile Include="Assets\Scripts\GamePlay\SceneAsseble.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\SceneTitle.cs" />
+    <Compile Include="Assets\Scripts\Objects\CursorMovement.cs" />
     <Compile Include="Assets\Scripts\Others\Singleton.cs" />
     <Compile Include="Assets\Scripts\System\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\System\GameManager.cs" />
     <Compile Include="Assets\Scripts\System\UIManager.cs" />
   </ItemGroup>
   <ItemGroup>

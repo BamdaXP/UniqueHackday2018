@@ -28,6 +28,9 @@ public class SceneAsseble : SerializedMonoBehaviour {
             return false;
         }
     }
+    private bool starting = false;
+
+    private int count;
 
     private void Start()
     {
@@ -39,7 +42,34 @@ public class SceneAsseble : SerializedMonoBehaviour {
     {
         InputUpdate();
         StateUpdate();
+        CountUpdate();
         SetChooseAnim();
+    }
+
+    private void StartCount()
+    {
+        count = (int)(5 * (1.0/Time.deltaTime));
+    }
+
+    private void CountUpdate()
+    {
+        if (finished)
+        {
+            if (starting == false)
+            {
+                StartCount();
+                starting = true;
+            }
+            if (count>0)
+            {
+                count -= 1;
+            }
+            if (count <= 0)
+            {
+                Debug.Log("Start Game!!");
+            }
+        }
+        
     }
 
     private void StateUpdate()
@@ -57,53 +87,66 @@ public class SceneAsseble : SerializedMonoBehaviour {
         }
         if (OneGen.finished&&TwoGen.finished)
         {
-            UIManager.Instance.OneState.text = "<color=\"green\">Starting game in";
-            UIManager.Instance.TwoState.text = "<color=\"green\">Starting game in";
+            UIManager.Instance.OneState.text = "<color=\"green\">Starting game in " + (int)(count / (1.0 / Time.deltaTime));
+            UIManager.Instance.TwoState.text = "<color=\"green\">Starting game in " + (int)(count / (1.0 / Time.deltaTime));
+        }
+        else
+        {
+            starting = false;
         }
     }
 
     private void InputUpdate()
     {
-        if (Input.GetKeyDown(KeyCode.D))
+        if (!OneGen.finished)
         {
-            int i = OneGen.index;
-            i += 1;
-            if (i>OneGen.points.Count-1)
+            if (Input.GetKeyDown(KeyCode.D))
             {
-                i = 0;
+                AudioManager.Instance.PlaySE("Normal");
+                int i = OneGen.index;
+                i += 1;
+                if (i > OneGen.points.Count - 1)
+                {
+                    i = 0;
+                }
+                OneGen.index = i;
             }
-            OneGen.index = i;
+            if (Input.GetKeyDown(KeyCode.A))
+            {
+                AudioManager.Instance.PlaySE("Normal");
+                int i = OneGen.index;
+                i -= 1;
+                if (i < 0)
+                {
+                    i = OneGen.points.Count - 1;
+                }
+                OneGen.index = i;
+            }
         }
-        if (Input.GetKeyDown(KeyCode.A))
+        if (!TwoGen.finished)
         {
-            int i = OneGen.index;
-            i -= 1;
-            if (i < 0)
+            if (Input.GetKeyDown(KeyCode.RightArrow))
             {
-                i = OneGen.points.Count-1;
+                AudioManager.Instance.PlaySE("Normal");
+                int i = TwoGen.index;
+                i += 1;
+                if (i > TwoGen.points.Count - 1)
+                {
+                    i = 0;
+                }
+                TwoGen.index = i;
             }
-            OneGen.index = i;
-        }
-
-        if (Input.GetKeyDown(KeyCode.RightArrow))
-        {
-            int i = TwoGen.index;
-            i += 1;
-            if (i > TwoGen.points.Count - 1)
+            if (Input.GetKeyDown(KeyCode.LeftArrow))
             {
-                i = 0;
+                AudioManager.Instance.PlaySE("Normal");
+                int i = TwoGen.index;
+                i -= 1;
+                if (i < 0)
+                {
+                    i = TwoGen.points.Count - 1;
+                }
+                TwoGen.index = i;
             }
-            TwoGen.index = i;
-        }
-        if (Input.GetKeyDown(KeyCode.LeftArrow))
-        {
-            int i = TwoGen.index;
-            i -= 1;
-            if (i < 0)
-            {
-                i = TwoGen.points.Count - 1;
-            }
-            TwoGen.index = i;
         }
 
         if (Input.GetKeyDown(KeyCode.LeftShift))

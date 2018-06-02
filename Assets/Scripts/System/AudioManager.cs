@@ -38,8 +38,9 @@ public class AudioManager : Singleton<AudioManager> {
     public List<BGM> BGMs;
     
 
-    private void Start()
+    private void Awake()
     {
+        DontDestroyOnLoad(gameObject);
         foreach (var se in SEs)
         {
             se.source = gameObject.AddComponent<AudioSource>();
@@ -53,6 +54,7 @@ public class AudioManager : Singleton<AudioManager> {
             bgm.source.clip = bgm.bgm;
             bgm.source.pitch = bgm.pitch;
             bgm.source.volume = bgm.volume;
+            bgm.source.playOnAwake = false;
         }
     }
 
@@ -72,14 +74,15 @@ public class AudioManager : Singleton<AudioManager> {
         {
             if (bgm.name == name)
             {
-                bgm.source.loop = loop;
+                Debug.Log(bgm.source);
                 bgm.source.Play();
+                bgm.source.loop = loop;
             }
         }
     }
     public void StopBGM(string name)
     {
-        foreach (var s in SEs)
+        foreach (var s in BGMs)
         {
             if (s.name == name)
             {

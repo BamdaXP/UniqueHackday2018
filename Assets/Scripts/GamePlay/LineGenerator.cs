@@ -33,9 +33,26 @@ public class LineGenerator : SerializedMonoBehaviour {
     [ReadOnly]
     public bool processing = false;
 
-    private void Start()
+    public Transform GeneratorCenter;
+    public float radius;
+    public int candidates;
+
+    private void Awake()
     {
-        if (points.Count<=0)
+        points.Clear();
+        Debug.Log(candidates);
+        for(int i=0; i<candidates; i++)
+        {
+            Vector3 randomPoint = Random.insideUnitCircle * radius;
+            randomPoint.x *= 0.4f;
+            randomPoint.y *= 1.2f;
+            randomPoint.x += GeneratorCenter.position.x;
+            randomPoint.y += GeneratorCenter.position.y;
+            points.Add(new LineGenerator.Point());
+            points[points.Count - 1].pos = randomPoint;
+        }
+
+        if (points.Count <= 0)
         {
             Debug.LogWarning("No Point Candidates!!");
             return;
@@ -72,8 +89,10 @@ public class LineGenerator : SerializedMonoBehaviour {
     {
         if (!Connectable()||processing)
         {
+            AudioManager.Instance.PlaySE("Warn");
             return;
         }
+        AudioManager.Instance.PlaySE("Connect");
         StopAllCoroutines();
         line.SetPosition(line.positionCount - 1, selectedPoints[selectedPoints.Count - 1].pos);
         selectedPoints.Add(pointing);
@@ -98,8 +117,10 @@ public class LineGenerator : SerializedMonoBehaviour {
         //Can not remove the begin
         if (selectedPoints.Count<=1||processing)
         {
+            AudioManager.Instance.PlaySE("Warn");
             return;
         }
+        AudioManager.Instance.PlaySE("Disconnect");
         selectedPoints.RemoveAt(selectedPoints.Count - 1);
         StopAllCoroutines();
         StartCoroutine(Cancelling());
