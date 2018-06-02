@@ -44,21 +44,21 @@ public class SceneAsseble : SerializedMonoBehaviour {
 
     private void StateUpdate()
     {
-        UIManager.Instance.OneState.text = "Link the line to the <color=\"red\">Red Point</color> to Prepare";
-        UIManager.Instance.TwoState.text = "Link the line to the <color=\"red\">Red Point</color> to Prepare";
+        UIManager.Instance.OneState.text = "Link the line to the <color=\"red\">Red Point</color> to <color=\"green\">Prepare</color>";
+        UIManager.Instance.TwoState.text = "Link the line to the <color=\"red\">Red Point</color> to <color=\"green\">Prepare</color>";
 
         if (OneGen.finished)
         {
-            UIManager.Instance.OneState.text = "Waiting for partner";
+            UIManager.Instance.OneState.text = "<color=\"yellow\">Waiting for partner......</color>";
         }
         if (TwoGen.finished)
         {
-            UIManager.Instance.TwoState.text = "Waiting for partner";
+            UIManager.Instance.TwoState.text = "<color=\"yellow\">Waiting for partner......</color>";
         }
         if (OneGen.finished&&TwoGen.finished)
         {
-            UIManager.Instance.OneState.text = "Starting game in";
-            UIManager.Instance.TwoState.text = "Starting game in";
+            UIManager.Instance.OneState.text = "<color=\"green\">Starting game in";
+            UIManager.Instance.TwoState.text = "<color=\"green\">Starting game in";
         }
     }
 
