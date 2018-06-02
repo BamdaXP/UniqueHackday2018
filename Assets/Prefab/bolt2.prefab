@@ -99,7 +99,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: fe1343e84d751ff4c97f9a35ea752de5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 2
+  speed: 5
   bolt: {fileID: 1117568571980576}
   followed: {fileID: 1008808217579820, guid: a95c4d2709ff1cf46a29884aa8bafa9e, type: 2}
   followrate: 2

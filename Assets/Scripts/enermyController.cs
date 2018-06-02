@@ -2,9 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class enermyController : MonoBehaviour {
+public class enemyController : MonoBehaviour {
     //public Vector2 startPos;
-    public GameObject enermy;
+    public GameObject enemy;
     public float speed;
     Rigidbody2D Rb;
     public GameObject bolt;
@@ -13,7 +13,7 @@ public class enermyController : MonoBehaviour {
     public GameObject mat;
     // Use this for initialization
     void Start () {
-        Rb = enermy.GetComponent<Rigidbody2D>();
+        Rb = enemy.GetComponent<Rigidbody2D>();
         //Rb.position = startPos;
         Rb.velocity = speed*new Vector2(0,-1);
         if(hasfire==1)StartCoroutine(Fire());
