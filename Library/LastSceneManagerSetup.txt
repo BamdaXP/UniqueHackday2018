@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Packages/EZ Camera Shake/Demo/CameraShakeDemo.unity
+- path: C:/Users/Bamda/Documents/UnityProjects/ForTheEarth/Assets/Scenes/Main.unity
   isLoaded: 1
   isActive: 1
