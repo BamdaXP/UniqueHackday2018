@@ -8,6 +8,7 @@ TagManager:
   - Background
   - Mirror
   - Enemy
+  - Enemy3
   layers:
   - Default
   - TransparentFX

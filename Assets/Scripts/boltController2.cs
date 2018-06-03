@@ -15,24 +15,19 @@ public class boltController2 : MonoBehaviour {
 	void Start () {
         boltbody=bolt.GetComponent<Rigidbody2D>();
         followedbody=followed.GetComponent<Rigidbody2D>();
-        if (boltbody.position.x > 512)
-        {
-            dir = new Vector2(1, 1);
-            left = false;
-        }
-        else dir = new Vector2(-1, 1);
+        dir = new Vector2(0,-1);
         boltbody.velocity = dir.normalized * speed;
     }
 	
 	// Update is called once per frame
 	void Update () {
         Vector2 pos = followedbody.position - boltbody.position;
-        boltbody.rotation = Mathf.Atan(pos.y / pos.x) * 180 / Mathf.PI;
+        boltbody.rotation = Mathf.Atan(pos.y / pos.x) * 180 / Mathf.PI+90;
         boltbody.AddForce(pos.normalized*followrate*pos.magnitude/(boltbody.velocity.magnitude+1));
    
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-        Debug.Log("enter");
+       // Debug.Log("enter");
     }
 }

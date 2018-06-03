@@ -24,7 +24,7 @@ GameObject:
   - component: {fileID: 50279499124696288}
   - component: {fileID: 114309801579954594}
   m_Layer: 0
-  m_Name: enermy2
+  m_Name: enemy1
   m_TagString: Enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -99,12 +99,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4402e9e24e8454a47a1450be9f350210, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  enermy: {fileID: 1127135953884376}
+  enemy: {fileID: 1127135953884376}
   speed: 1
-  Rb: {fileID: 0}
   bolt: {fileID: 1792286213549994, guid: aad31f3d8d720af44a64216ef0d0acb5, type: 2}
   shotWait: 3
-  hasfire: 1
+  hasfire: 0
   mat: {fileID: 1102606688194386, guid: 10147b3af3101424686d45f9768f95a9, type: 2}
 --- !u!212 &212144794223677294
 SpriteRenderer:

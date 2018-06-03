@@ -27,7 +27,7 @@ public class GameLoop : MonoBehaviour
 				if(hit != null && hit.collider != null)
 				{
 					if (hit.collider.gameObject.CompareTag("Enemy") == false) continue;
-					hit.collider.gameObject.GetComponent<enermyController>().Dispawn();
+					hit.collider.gameObject.GetComponent<enemyController>().fireworks();
 					Debug.Log("Hit");
 				}
 			}
