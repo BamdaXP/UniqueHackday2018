@@ -145,8 +145,8 @@ MonoBehaviour:
   playerNum: 2
   startPos: {x: 1, y: 1}
   player: {fileID: 1458202123478644}
-  speed: 3
-  angularSpeed: 50
+  speed: 2
+  angularSpeed: 75
   minX: 0
   minY: 0
   maxX: 0
@@ -170,7 +170,7 @@ MonoBehaviour:
   startPos: {x: 1, y: 1}
   player: {fileID: 1458202123478644}
   speed: 3
-  angularSpeed: 20
+  angularSpeed: 50
   minX: 0
   minY: 0
   maxX: 0

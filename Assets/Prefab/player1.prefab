@@ -21,8 +21,8 @@ GameObject:
   - component: {fileID: 4252820956009564}
   - component: {fileID: 212996530821777886}
   - component: {fileID: 50935564623729238}
-  - component: {fileID: 61723444036256460}
   - component: {fileID: 114181201796775210}
+  - component: {fileID: 61885040280337736}
   m_Layer: 0
   m_Name: player1
   m_TagString: Player
@@ -93,7 +93,7 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 0
   m_Constraints: 0
---- !u!61 &61723444036256460
+--- !u!61 &61885040280337736
 BoxCollider2D:
   m_ObjectHideFlags: 1
   m_PrefabParentObject: {fileID: 0}
@@ -116,7 +116,7 @@ BoxCollider2D:
     adaptiveTiling: 0
   m_AutoTiling: 0
   serializedVersion: 2
-  m_Size: {x: 1.28, y: 1.28}
+  m_Size: {x: 1.39, y: 1.04}
   m_EdgeRadius: 0
 --- !u!114 &114181201796775210
 MonoBehaviour:
@@ -132,9 +132,9 @@ MonoBehaviour:
   playerNum: 1
   startPos: {x: 0, y: 0}
   player: {fileID: 1008808217579820}
-  speed: 3
-  angularSpeed: 50
-  minX: 0
+  speed: 2
+  angularSpeed: 75
+  minX: 0.25
   minY: 0
   maxX: 0
   maxY: 0

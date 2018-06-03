@@ -17,13 +17,13 @@ public class destroyByBoundary : MonoBehaviour {
     private void OnTriggerExit2D(Collider2D other)
     {
         
-        if(other.CompareTag("Enermy"))
+        if(other.CompareTag("Enemy"))
         {
             //LoseBlood();
             Instantiate(mat, other.transform.position,other.transform.rotation);
         }
         Destroy(other.gameObject);
-        Debug.Log("1");
+       // Debug.Log("1");
         
     }
 }

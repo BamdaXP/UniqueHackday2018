@@ -82,7 +82,7 @@ public class playerController : MonoBehaviour {
 
     public void PostFire()
     {
-        _ray.gameObject.SetActive(false);
+        //_ray.gameObject.SetActive(false);
         _isFiring = false;
         _fireRemaining = 0.0f;
         // Debug.Log("Post Fire" + playerNum);
