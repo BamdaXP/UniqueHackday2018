@@ -6,6 +6,10 @@ using Sirenix.OdinInspector;
 public class LineGenerator : SerializedMonoBehaviour {
     public class Point
     {
+        public Point(float x, float y)
+        {
+            pos = new Vector3(x, y);
+        }
         public Vector3 pos;
     }
 
@@ -40,18 +44,18 @@ public class LineGenerator : SerializedMonoBehaviour {
     private void Awake()
     {
         points.Clear();
-        Debug.Log(candidates);
-        for(int i=0; i<candidates; i++)
+        switch (GameManager.Instance.level)
         {
-            Vector3 randomPoint = Random.insideUnitCircle * radius;
-            randomPoint.x *= 0.4f;
-            randomPoint.y *= 1.2f;
-            randomPoint.x += GeneratorCenter.position.x;
-            randomPoint.y += GeneratorCenter.position.y;
-            points.Add(new LineGenerator.Point());
-            points[points.Count - 1].pos = randomPoint;
+            case 1:
+                LevelOne();
+                break;
+            case 2:
+                break;
+            case 3:
+                break;
+            default:
+                break;
         }
-
         if (points.Count <= 0)
         {
             Debug.LogWarning("No Point Candidates!!");
@@ -138,6 +142,15 @@ public class LineGenerator : SerializedMonoBehaviour {
         processing = false;
     }
 
+    private void LevelOne()
+    {
+        points.Add(new Point(1, 1));
+        points.Add(new Point(2, 1));
+        points.Add(new Point(3, 1));
+        points.Add(new Point(1, 2));
+        points.Add(new Point(2, 2));
+        points.Add(new Point(3, 2));
 
+    }
 }
 
