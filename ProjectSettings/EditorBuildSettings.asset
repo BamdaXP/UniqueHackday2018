@@ -8,12 +8,18 @@ EditorBuildSettings:
   - enabled: 1
     path: Assets/Scenes/Title.unity
     guid: 1c32390f90b28754985ad495acdad327
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/41001649eeb635546956f6c3b298a8ff
+    guid: 41001649eeb635546956f6c3b298a8ff
+  - enabled: 0
+    path: Assets/__DELETED_GUID_Trash/41001649eeb635546956f6c3b298a8ff
+    guid: 41001649eeb635546956f6c3b298a8ff
+  - enabled: 1
+    path: Assets/Scenes/Level.unity
+    guid: 546ea9d50cc53433fb3e74b09f55e958
   - enabled: 1
     path: Assets/Scenes/Assemble.unity
-    guid: 41001649eeb635546956f6c3b298a8ff
+    guid: 332562c0280788b49880a6b897ecf9db
   - enabled: 1
-    path: Assets/Scenes/Test_Scene.unity
-    guid: 41001649eeb635546956f6c3b298a8ff
-  - enabled: 1
-    path: Assets/Scenes/test_level.unity
-    guid: 546ea9d50cc53433fb3e74b09f55e958
+    path: Assets/Scenes/GameOver.unity
+    guid: 0cb1caf1fe830144e92f08d1f4390814

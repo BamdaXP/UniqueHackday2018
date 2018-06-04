@@ -105,8 +105,8 @@ InputManager:
     m_Name: Quaternion1
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: j
-    positiveButton: k
+    negativeButton: e
+    positiveButton: q
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3
@@ -121,8 +121,8 @@ InputManager:
     m_Name: Quaternion2
     descriptiveName: 
     descriptiveNegativeName: 
-    negativeButton: '[1]'
-    positiveButton: '[2]'
+    negativeButton: '[2]'
+    positiveButton: '[1]'
     altNegativeButton: 
     altPositiveButton: 
     gravity: 3

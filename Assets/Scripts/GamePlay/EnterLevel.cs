@@ -17,19 +17,21 @@ public class EnterLevel : MonoBehaviour {
 			LineManager manager = GameObject.Find("PlayerRayManager").GetComponent<LineManager>();
 			LineRenderer lineOne = GameObject.Find("LineOne").GetComponent<LineRenderer>();
 			LineRenderer lineTwo = GameObject.Find("LineTwo").GetComponent<LineRenderer>();
-			int countOne = lineOne.numPositions, countTwo = lineTwo.numPositions;
+			int countOne = lineOne.positionCount, countTwo = lineTwo.positionCount;
 			manager.lineOnePositions = new Vector3[countOne];
 			manager.lineTwoPositions = new Vector3[countTwo];
 			for (int i = 1; i < countOne; i++)
 			{
 				manager.lineOnePositions[i] = lineOne.GetPosition(i) - lineOne.GetPosition(0);
-			}
+                manager.lineOnePositions[i].x *= 2;
+               }
 
 			manager.lineOnePositions[0] = Vector3.zero;
 			for (int i = 1; i < countTwo; i++)
 			{
 				manager.lineTwoPositions[i] = lineTwo.GetPosition(i) - lineTwo.GetPosition(0);
-			}
+                manager.lineTwoPositions[i].x *= 2;
+            }
 
 			manager.lineTwoPositions[0] = Vector3.zero;
 			SceneManager.LoadScene("test_level");

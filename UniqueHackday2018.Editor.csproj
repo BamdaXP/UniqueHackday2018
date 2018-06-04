@@ -311,6 +311,10 @@
       <Project>{ABA5358E-F394-1D57-89E7-D6658422E600}</Project>
       <Name>UniqueHackday2018</Name>
     </ProjectReference>
+    <ProjectReference Include="UniqueHackday2018.Editor.Plugins.csproj">
+      <Project>{50690014-713F-48D9-AB5C-E7AE14FF375F}</Project>
+      <Name>UniqueHackday2018.Editor.Plugins</Name>
+    </ProjectReference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Assets\Packages\Plugins\Sirenix\Odin Inspector\Scripts\Editor\BuildAOTAutomation.cs" />

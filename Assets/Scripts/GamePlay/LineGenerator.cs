@@ -144,13 +144,13 @@ public class LineGenerator : SerializedMonoBehaviour {
 
     private void LevelOne()
     {
-        points.Add(new Point(1, 1));
         points.Add(new Point(2, 1));
-        points.Add(new Point(3, 1));
         points.Add(new Point(1, 2));
         points.Add(new Point(2, 2));
-        points.Add(new Point(3, 2));
-
+        points.Add(new Point(2, 3));
+        points.Add(new Point(3, 4));
+        points.Add(new Point(3, 5));
+        points.Add(new Point(4, 6));
     }
 }
 

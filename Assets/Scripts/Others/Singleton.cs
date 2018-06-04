@@ -3,7 +3,7 @@
 using Sirenix.OdinInspector;
 #endif
 
-public class Singleton<T> : SerializedMonoBehaviour where T : SerializedMonoBehaviour
+public class Singleton<T> : MonoBehaviour where T : MonoBehaviour
 {
     private static T _instance;
 

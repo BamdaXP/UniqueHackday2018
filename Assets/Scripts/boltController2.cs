@@ -13,6 +13,10 @@ public class boltController2 : MonoBehaviour {
     bool left = true;
 	// Use this for initialization
 	void Start () {
+        if (Random.value > 0.5f)
+            followed = GameObject.Find("Player1");
+        else
+            followed = GameObject.Find("Player2");
         boltbody=bolt.GetComponent<Rigidbody2D>();
         followedbody=followed.GetComponent<Rigidbody2D>();
         dir = new Vector2(0,-1);

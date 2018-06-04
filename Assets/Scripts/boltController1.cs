@@ -17,6 +17,7 @@ public class boltController1 : MonoBehaviour {
 	}
     void OnTriggerEnter2D(Collider2D other)
     {
-       // Debug.Log("enter");
+        // Debug.Log("enter");
+        if (other.gameObject.CompareTag("Player")) Destroy(this);
     }
 }

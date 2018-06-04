@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using Sirenix.OdinInspector;
 using UnityEngine;
-
+using TMPro;
 public class SceneAsseble : SerializedMonoBehaviour {
 
     public GameObject startDot;
@@ -35,7 +35,10 @@ public class SceneAsseble : SerializedMonoBehaviour {
     private void Start()
     {
         DrawPoints();
-        
+        AudioManager.Instance.StopBGM("GameOver");
+        AudioManager.Instance.StopBGM("Main");
+        AudioManager.Instance.PlayBGM("Main");
+
     }
 
     private void Update()
@@ -66,7 +69,7 @@ public class SceneAsseble : SerializedMonoBehaviour {
             }
             if (count <= 0)
             {
-                Debug.Log("Start Game!!");
+                GameManager.Instance.AssembleToLevel();
             }
         }
         
@@ -74,21 +77,24 @@ public class SceneAsseble : SerializedMonoBehaviour {
 
     private void StateUpdate()
     {
-        UIManager.Instance.OneState.text = "Link the line to the <color=\"red\">Red Point</color> to <color=\"green\">Prepare</color>";
-        UIManager.Instance.TwoState.text = "Link the line to the <color=\"red\">Red Point</color> to <color=\"green\">Prepare</color>";
+        TextMeshProUGUI one = GameObject.Find("StateOneText").GetComponent<TextMeshProUGUI>();
+        TextMeshProUGUI two = GameObject.Find("StateTwoText").GetComponent<TextMeshProUGUI>();
+
+        one.text = "Link the line to the <color=\"red\">Red Point</color> to <color=\"green\">Prepare</color>";
+        two.text = "Link the line to the <color=\"red\">Red Point</color> to <color=\"green\">Prepare</color>";
 
         if (OneGen.finished)
         {
-            UIManager.Instance.OneState.text = "<color=\"yellow\">Waiting for partner......</color>";
+            one.text = "<color=\"yellow\">Waiting for partner......</color>";
         }
         if (TwoGen.finished)
         {
-            UIManager.Instance.TwoState.text = "<color=\"yellow\">Waiting for partner......</color>";
+            two.text = "<color=\"yellow\">Waiting for partner......</color>";
         }
         if (OneGen.finished&&TwoGen.finished)
         {
-            UIManager.Instance.OneState.text = "<color=\"green\">Starting game in " + (int)(count / (1.0 / Time.deltaTime));
-            UIManager.Instance.TwoState.text = "<color=\"green\">Starting game in " + (int)(count / (1.0 / Time.deltaTime));
+            one.text = "<color=\"green\">Starting game in " + (int)(count / (1.0 / Time.deltaTime));
+            two.text = "<color=\"green\">Starting game in " + (int)(count / (1.0 / Time.deltaTime));
         }
         else
         {

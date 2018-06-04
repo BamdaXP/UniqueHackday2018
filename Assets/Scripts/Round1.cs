@@ -12,26 +12,26 @@ public class Round1 : MonoBehaviour {
         {
             {0,0,0,0,0,0,1,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
+            {0,0,3,3,3,3,3,3,3,3,3,0,0},
+            {0,0,3,0,0,0,0,0,0,0,3,0,0},
+            {0,0,3,0,0,0,0,0,0,0,3,0,0},
+            {0,0,3,0,0,0,0,0,0,0,3,0,0},
+            {0,0,3,0,0,0,0,0,0,0,3,0,0},
+            {0,0,3,0,0,0,0,0,0,0,3,0,0},
+            {0,0,3,3,3,3,3,3,3,3,3,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0},
         },
         {
             {0,0,0,0,0,1,1,1,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,1,1,1,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,0,3,0,0,0,0,0,0},
-            {0,0,0,0,0,0,0,0,0,0,0,0,0},
-            {0,0,0,0,0,1,1,1,0,0,0,0,0},
+            {0,0,2,0,0,0,0,0,0,0,2,0,0},
+            {0,0,2,0,0,0,0,0,0,0,2,0,0},
+            {0,0,2,0,0,1,1,1,0,0,2,0,0},
+            {0,0,2,0,0,0,0,0,0,0,2,0,0},
+            {0,0,2,0,0,0,3,0,0,0,2,0,0},
+            {0,0,2,0,0,0,0,0,0,0,2,0,0},
+            {0,0,2,0,0,1,1,1,0,0,2,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0},
             {0,0,0,0,0,0,0,0,0,0,0,0,0},
         },
@@ -62,16 +62,23 @@ public class Round1 : MonoBehaviour {
     IEnumerator Fire()
     {
         yield return new WaitForSeconds(firstTime);
-        for (int i=0;i<waveNum;i++)
+        while(true)
         {
-            for(int j=0;j<waveWidth;j++)
+            float currentDelta = deltaTime;
+            for (int i = 0; i < waveNum; i++)
             {
-                if(everyWave[roundNum,i,j]!=0)
+                for (int j = 0; j < waveWidth; j++)
                 {
-                    Instantiate(enermies[everyWave[roundNum,i, j] - 1], new Vector3((j - waveWidth/2) * length, transform.position.y, 0), Quaternion.identity);
+                    int chooseRound = Mathf.FloorToInt(Random.Range(0, 3));
+                    if (everyWave[chooseRound, i, j] != 0)
+                    {
+                        Instantiate(enermies[everyWave[chooseRound, i, j] - 1], new Vector3((j - waveWidth / 2) * length, transform.position.y, 0), Quaternion.identity);
+                    }
                 }
+                yield return new WaitForSeconds(currentDelta);
+                currentDelta = currentDelta * 0.95f;
             }
-            yield return new WaitForSeconds(deltaTime);
         }
+        
     }
 }

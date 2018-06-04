@@ -26,6 +26,10 @@ public class enemyController : MonoBehaviour {
     void OnTriggerEnter2D(Collider2D other)
     {
     }
+    private void OnMouseDown()
+    {
+        fireworks();
+    }
     IEnumerator Fire()
     {
         while(true)
@@ -36,6 +40,7 @@ public class enemyController : MonoBehaviour {
     }
     public void fireworks()
     {
+        AudioManager.Instance.PlaySE("EnemyHurt");
         Instantiate(mat, transform);
         Destroy(gameObject);
     }

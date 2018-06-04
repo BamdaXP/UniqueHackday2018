@@ -12,10 +12,14 @@ public class GameLoop : MonoBehaviour
 	
 	// Use this for initialization
 	void Start () {
+        AudioManager.Instance.StopBGM("Main");
+        AudioManager.Instance.PlayBGM("Assemble");
 	}
 	
 	// Update is called once per frame
 	void Update () {
+
+        
 		if (player1.IsFiring && player2.IsFiring)
 		{
 			var crossPoints = player1.Ray.GetIntersections(player2.Ray);
@@ -36,6 +40,17 @@ public class GameLoop : MonoBehaviour
 			{
 				indicators[i].SetActive(false);
 			}
+
+            if (crossPoints.Count>0)
+            {
+                GameObject.Find("Player1").GetComponentInChildren<LineRenderer>().endColor = new Color(70, 70, 200);
+                GameObject.Find("Player2").GetComponentInChildren<LineRenderer>().endColor = new Color(70, 70, 200);
+            }
+            else
+            {
+                GameObject.Find("Player1").GetComponentInChildren<LineRenderer>().endColor = Color.white;
+                GameObject.Find("Player2").GetComponentInChildren<LineRenderer>().endColor = Color.white;
+            }
 		}
 		else
 		{

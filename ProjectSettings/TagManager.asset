@@ -9,6 +9,7 @@ TagManager:
   - Mirror
   - Enemy
   - Enemy3
+  - Bolt
   layers:
   - Default
   - TransparentFX
