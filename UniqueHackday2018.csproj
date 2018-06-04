@@ -260,6 +260,30 @@
     <Reference Include="SyntaxTree.VisualStudio.Unity.Bridge">
       <HintPath>C:/Program Files (x86)/Microsoft Visual Studio Tools for Unity/15.0/Editor/SyntaxTree.VisualStudio.Unity.Bridge.dll</HintPath>
     </Reference>
+    <Reference Include="Sirenix.OdinInspector.Attributes">
+      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.OdinInspector.Editor">
+      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization.Config">
+      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Serialization">
+      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities">
+      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
+    </Reference>
+    <Reference Include="Sirenix.Utilities.Editor">
+      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
+      <HintPath>Assets/Packages/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
+    </Reference>
+    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
+      <HintPath>Assets/Packages/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
+    </Reference>
     <Reference Include="UnityEngine.Advertisements">
       <HintPath>C:/Users/Bamda/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.ads@2.0.3/UnityEngine.Advertisements.dll</HintPath>
     </Reference>
@@ -281,40 +305,8 @@
     <Reference Include="UnityEngine.StandardEvents">
       <HintPath>C:/Users/Bamda/AppData/LocalLow/Unity/cache/packages/packages.unity.com/com.unity.standardevents@1.0.10/UnityEngine.StandardEvents.dll</HintPath>
     </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Runtime">
-      <HintPath>Assets/Packages/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Runtime.dll</HintPath>
-    </Reference>
-    <Reference Include="TextMeshPro-2017.3-1.0.56-Editor">
-      <HintPath>Assets/Packages/TextMesh Pro/Plugins/Editor DLL/TextMeshPro-2017.3-1.0.56-Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization">
-      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Serialization.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities">
-      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Utilities.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Utilities.Editor">
-      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Utilities.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Editor">
-      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Editor.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.OdinInspector.Attributes">
-      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.OdinInspector.Attributes.dll</HintPath>
-    </Reference>
-    <Reference Include="Sirenix.Serialization.Config">
-      <HintPath>Assets/Packages/Plugins/Sirenix/Assemblies/Sirenix.Serialization.Config.dll</HintPath>
-    </Reference>
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Assets\Packages\EZ Camera Shake\Demo\Sample Scripts\ShakeByDistance.cs" />
-    <Compile Include="Assets\Packages\EZ Camera Shake\Demo\Sample Scripts\ShakeOnKeyPress.cs" />
-    <Compile Include="Assets\Packages\EZ Camera Shake\Demo\Sample Scripts\ShakeOnTrigger.cs" />
-    <Compile Include="Assets\Packages\EZ Camera Shake\Demo\ShakeDemo.cs" />
-    <Compile Include="Assets\Packages\EZ Camera Shake\Scripts\CameraShakeInstance.cs" />
-    <Compile Include="Assets\Packages\EZ Camera Shake\Scripts\CameraShakePresets.cs" />
-    <Compile Include="Assets\Packages\EZ Camera Shake\Scripts\CameraShaker.cs" />
-    <Compile Include="Assets\Packages\EZ Camera Shake\Scripts\Utilities\CameraUtilities.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark01_UGUI.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\Benchmark02.cs" />
@@ -348,6 +340,34 @@
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexShakeB.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\VertexZoom.cs" />
     <Compile Include="Assets\Packages\TextMesh Pro\Examples &amp; Extras\Scripts\WarpTextExample.cs" />
+    <Compile Include="Assets\Scripts\boltController1.cs" />
+    <Compile Include="Assets\Scripts\boltController2.cs" />
+    <Compile Include="Assets\Scripts\destroyByBoundary.cs" />
+    <Compile Include="Assets\Scripts\enemyController.cs" />
+    <Compile Include="Assets\Scripts\GameLoop.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\EnterLevel.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\LevelStart.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\LineGenerator.cs" />
+    <Compile Include="Assets\Scripts\GamePlay\LineManager.cs" />
+    <Compile Include="Assets\Scripts\HealthBarController.cs" />
+    <Compile Include="Assets\Scripts\Map\ObstacleBase.cs" />
+    <Compile Include="Assets\Scripts\Objects\Cover.cs" />
+    <Compile Include="Assets\Scripts\Objects\CursorMovement.cs" />
+    <Compile Include="Assets\Scripts\Others\Singleton.cs" />
+    <Compile Include="Assets\Scripts\playerController.cs" />
+    <Compile Include="Assets\Scripts\Ray\PlayerRay.cs" />
+    <Compile Include="Assets\Scripts\Ray\RayConnectionDetect.cs" />
+    <Compile Include="Assets\Scripts\Raycast\LineRaycast.cs" />
+    <Compile Include="Assets\Scripts\Round1.cs" />
+    <Compile Include="Assets\Scripts\SceneScripts\SceneAsseble.cs" />
+    <Compile Include="Assets\Scripts\SceneScripts\SceneOver.cs" />
+    <Compile Include="Assets\Scripts\SceneScripts\SceneTitle.cs" />
+    <Compile Include="Assets\Scripts\System\AudioManager.cs" />
+    <Compile Include="Assets\Scripts\System\GameManager.cs" />
+    <Compile Include="Assets\Scripts\System\UIManager.cs" />
+    <Compile Include="Assets\Shaker.cs" />
+    <Compile Include="Assets\slowDown.cs" />
+    <Compile Include="Assets\stopmovingTrigger.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="Assets\Packages\Plugins\Sirenix\Assemblies\Sirenix.OdinInspector.Attributes.xml" />
