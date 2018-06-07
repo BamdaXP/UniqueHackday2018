@@ -24,8 +24,8 @@ public class RayConnectionDetect: MonoBehaviour
 			direction.z = 0.0f;
 			direction = (direction - playerPosition).normalized;
 			_line.gameObject.transform.rotation = Quaternion.FromToRotation(Vector3.up, direction);
-			
-			var result = ray2.GetIntersections(ray1);
+			int _i, _j;
+			var result = ray2.GetIntersections(ray1, out _i, out _j);
 			for(int i=0; i<result.Count; i++)
 			{
 				indicator[i].transform.position = result[i];

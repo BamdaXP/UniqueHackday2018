@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class gameover : MonoBehaviour {
+public class SceneOver : MonoBehaviour {
 
     public float seconds = 5;
 	// Use this for initialization

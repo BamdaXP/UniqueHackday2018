@@ -1361,15 +1361,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8f748f7cebf5b3a468d639ace03aff56, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   SEs:
   - name: Connect
     se: {fileID: 8300000, guid: a29287d9ab3ad5f4ea3e2fd60ab652ba, type: 3}
@@ -2001,15 +1992,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 78414b7849d0a6a45a93e6cf2feea6ed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  serializationData:
-    SerializedFormat: 2
-    SerializedBytes: 
-    ReferencedUnityObjects: []
-    SerializedBytesString: 
-    Prefab: {fileID: 0}
-    PrefabModificationsReferencedUnityObjects: []
-    PrefabModifications: []
-    SerializationNodes: []
   scene: 0
   level: 1
   cover: {fileID: 1232837878}

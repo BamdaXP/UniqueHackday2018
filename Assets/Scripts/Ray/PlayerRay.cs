@@ -14,7 +14,7 @@ public class PlayerRay : MonoBehaviour
 	{
 	}
 
-	private void LateUpdate()
+	private void Update()
 	{
 		line = gameObject.GetComponent<LineRenderer>();
 		_points = new Vector2[line.positionCount];
@@ -26,9 +26,10 @@ public class PlayerRay : MonoBehaviour
 		}
 	}
 
-	public List<Vector2> GetIntersections(PlayerRay playerRay)
+	public List<Vector2> GetIntersections(PlayerRay playerRay, out int p1Max, out int p2Max)
 	{
 		List<Vector2> results = new List<Vector2>();
+		p1Max = p2Max = -1;
 		for (int i = 0; i < _pointCount-1; i++)
 		{
 			for (int j = 0; j < playerRay._pointCount-1; j++)
@@ -36,6 +37,8 @@ public class PlayerRay : MonoBehaviour
 				Vector2 intersection = new Vector2();
 				if (GetIntersection(_points[i], _points[i + 1], playerRay._points[j], playerRay._points[j + 1], ref intersection))
 				{
+					p1Max = i+1;
+					p2Max = j+1;
 					results.Add(intersection);
 				}
 			}
