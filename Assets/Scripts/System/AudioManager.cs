@@ -74,7 +74,6 @@ public class AudioManager : Singleton<AudioManager> {
         {
             if (bgm.name == name)
             {
-                Debug.Log(bgm.source);
                 bgm.source.Play();
                 bgm.source.loop = loop;
             }
