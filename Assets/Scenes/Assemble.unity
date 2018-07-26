@@ -880,7 +880,7 @@ GameObject:
   - component: {fileID: 660526083}
   - component: {fileID: 660526082}
   m_Layer: 0
-  m_Name: "QQ\u56FE\u724720180602214232"
+  m_Name: player1_ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1455,7 +1455,7 @@ GameObject:
   - component: {fileID: 1007595442}
   - component: {fileID: 1007595441}
   m_Layer: 0
-  m_Name: "QQ\u56FE\u724720180602214236"
+  m_Name: player2_ship
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -2723,7 +2723,7 @@ GameObject:
   - component: {fileID: 1901383647}
   - component: {fileID: 1901383646}
   m_Layer: 0
-  m_Name: "\u7EC4-15"
+  m_Name: info
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
